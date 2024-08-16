@@ -468,3 +468,366 @@
         return result.concat(arr1.slice(i)).concat(arr2.slice(j));
       }
       ```
+
+
+### Beginner 
+Let's go through each of these JavaScript concepts in simple language with examples.
+
+### Basics & Variables
+
+**1. What is JavaScript?**
+JavaScript is a programming language used to make web pages interactive. It allows you to create dynamic content like image sliders, form validations, and much more on websites.
+
+*Example:* When you click a button and see an alert box pop up, that’s JavaScript in action.
+
+**2. Differentiate between Java and JavaScript.**
+- **Java** is a full-fledged programming language used to build large applications like Android apps.
+- **JavaScript** is mainly used for enhancing web pages by making them interactive.
+
+*Example:* Java is like a full car engine (can run a whole car), while JavaScript is like the radio (makes the drive more fun).
+
+**3. How can you link a JavaScript file to an HTML document?**
+You link a JavaScript file to an HTML document using the `<script>` tag.
+
+*Example:*
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <script src="script.js"></script> <!-- This links the script.js file -->
+</body>
+</html>
+```
+
+**4. Explain the difference between `var`, `let`, and `const`.**
+- **`var`**: Used to declare variables that can be redeclared and updated. It has a function scope.
+- **`let`**: Used to declare variables that can be updated but not redeclared. It has block scope.
+- **`const`**: Used to declare variables that cannot be updated or redeclared. It also has block scope.
+
+*Example:*
+```javascript
+var x = 10;
+let y = 20;
+const z = 30;
+
+x = 15; // Allowed
+y = 25; // Allowed
+// z = 35; // Not allowed, z is constant
+```
+
+### Data Types & Structures
+
+**5. List the primitive data types in JavaScript.**
+The primitive data types in JavaScript are:
+- **String**: Text (e.g., `"Hello"`)
+- **Number**: Numbers (e.g., `123`, `3.14`)
+- **Boolean**: True or false (e.g., `true`, `false`)
+- **Undefined**: A variable that has been declared but not assigned a value
+- **Null**: Represents the intentional absence of any value
+- **Symbol**: A unique and immutable value used as object keys
+- **BigInt**: Used for integers larger than the `Number` type can handle
+
+**6. What is the difference between `null` and `undefined`?**
+- **`null`**: A value that represents "nothing" or "no value."
+- **`undefined`**: A variable that has been declared but not assigned a value.
+
+*Example:*
+```javascript
+let a;
+console.log(a); // undefined
+let b = null;
+console.log(b); // null
+```
+
+**7. How would you check the type of a variable in JavaScript?**
+You can check the type of a variable using the `typeof` operator.
+
+*Example:*
+```javascript
+let x = 42;
+console.log(typeof x); // "number"
+```
+
+**8. What are JavaScript arrays and how are they different from objects?**
+- **Array**: A list-like structure that holds multiple values in a specific order.
+- **Object**: A collection of key-value pairs where each key is a unique identifier.
+
+*Example:*
+```javascript
+let fruits = ["apple", "banana", "cherry"]; // Array
+let person = { name: "John", age: 30 }; // Object
+```
+
+### Functions & Scope
+
+**9. How do you declare a function in JavaScript?**
+You declare a function using the `function` keyword followed by the function name and parentheses.
+
+*Example:*
+```javascript
+function greet(name) {
+    return "Hello, " + name;
+}
+
+console.log(greet("Ashish")); // "Hello, Ashish"
+```
+
+**10. What is a callback function?**
+A callback function is a function passed into another function as an argument, which is then executed inside the outer function.
+
+*Example:*
+```javascript
+function sayHello(callback) {
+    callback();
+}
+
+function greet() {
+    console.log("Hello!");
+}
+
+sayHello(greet); // "Hello!"
+```
+
+**11. What is the difference between local and global scope?**
+- **Global scope**: Variables declared outside any function are in the global scope and can be accessed from anywhere in the code.
+- **Local scope**: Variables declared inside a function are in the local scope and can only be accessed within that function.
+
+*Example:*
+```javascript
+let globalVar = "I am global";
+
+function test() {
+    let localVar = "I am local";
+    console.log(globalVar); // Accessible
+    console.log(localVar); // Accessible
+}
+
+test();
+console.log(localVar); // Error: localVar is not defined
+```
+
+**12. How do you create an immediately invoked function expression (IIFE)?**
+An IIFE is a function that runs as soon as it is defined.
+
+*Example:*
+```javascript
+(function() {
+    console.log("This runs immediately!");
+})();
+```
+
+### Operators & Control Structures
+
+**13. Explain the difference between `==` and `===`.**
+- **`==`**: Compares values for equality, performing type conversion if necessary.
+- **`===`**: Compares both value and type without performing type conversion.
+
+*Example:*
+```javascript
+console.log(5 == "5"); // true, because types are converted
+console.log(5 === "5"); // false, because types are different
+```
+
+**14. What are the different types of loops in JavaScript?**
+- **`for`** loop: Repeats a block of code a specific number of times.
+- **`while`** loop: Repeats a block of code as long as a condition is true.
+- **`do...while`** loop: Executes a block of code once, and then repeats as long as a condition is true.
+- **`for...in`** loop: Iterates over the properties of an object.
+- **`for...of`** loop: Iterates over the values of an iterable object like an array.
+
+*Example:*
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log(i); // Prints 0 to 4
+}
+```
+
+**15. How do you write a switch statement in JavaScript?**
+A `switch` statement allows you to choose one of many code blocks to be executed.
+
+*Example:*
+```javascript
+let fruit = "apple";
+
+switch (fruit) {
+    case "apple":
+        console.log("This is an apple.");
+        break;
+    case "banana":
+        console.log("This is a banana.");
+        break;
+    default:
+        console.log("Unknown fruit.");
+}
+```
+
+### DOM Manipulation
+
+**16. What is the DOM?**
+The Document Object Model (DOM) is a programming interface for HTML documents. It represents the page so that programs can change the document structure, style, and content.
+
+**17. How can you select an element by its ID using JavaScript?**
+You can select an element by its ID using `document.getElementById("id")`.
+
+*Example:*
+```javascript
+let element = document.getElementById("myId");
+console.log(element);
+```
+
+**18. How would you add a new element to the DOM?**
+You can add a new element to the DOM using `document.createElement` and `appendChild`.
+
+*Example:*
+```javascript
+let newElement = document.createElement("div");
+newElement.textContent = "Hello, World!";
+document.body.appendChild(newElement);
+```
+
+**19. What is the difference between `textContent` and `innerHTML`?**
+- **`textContent`**: Sets or gets the text content of an element.
+- **`innerHTML`**: Sets or gets the HTML content of an element.
+
+*Example:*
+```javascript
+let element = document.getElementById("myId");
+element.textContent = "Hello"; // Sets text only
+element.innerHTML = "<strong>Hello</strong>"; // Sets HTML content
+```
+
+### Events & Event Handling
+
+**20. What is an event in JavaScript?**
+An event is an action or occurrence that happens in the browser, like a user clicking a button, moving the mouse, or pressing a key.
+
+**21. How do you attach an event handler to a button click?**
+You can attach an event handler using `addEventListener`.
+
+*Example:*
+```javascript
+let button = document.getElementById("myButton");
+button.addEventListener("click", function() {
+    alert("Button clicked!");
+});
+```
+
+**22. What is event delegation and why is it useful?**
+Event delegation is a technique where a single event listener is added to a parent element to manage events for all of its child elements. It's useful for handling events efficiently, especially for dynamically added elements.
+
+*Example:*
+```javascript
+document.body.addEventListener("click", function(event) {
+    if (event.target.tagName === "BUTTON") {
+        alert("Button clicked!");
+    }
+});
+```
+
+### Objects & Prototypes
+
+**23. How do you create an object in JavaScript?**
+You can create an object using object literals or the `new Object()` syntax.
+
+*Example:*
+```javascript
+let person = {
+    name: "John",
+    age: 30
+};
+```
+
+**24
+
+. What is a prototype in JavaScript and why is it important?**
+A prototype is an object from which other objects inherit properties and methods. It's important for sharing common properties or methods across multiple objects without duplicating them.
+
+*Example:*
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.sayHello = function() {
+    console.log("Hello, " + this.name);
+};
+
+let john = new Person("John");
+john.sayHello(); // "Hello, John"
+```
+
+**25. How can you add a method to an existing object?**
+You can add a method to an existing object by assigning a function to a new property.
+
+*Example:*
+```javascript
+let car = {
+    brand: "Toyota"
+};
+
+car.drive = function() {
+    console.log("Driving a " + this.brand);
+};
+
+car.drive(); // "Driving a Toyota"
+```
+
+### Errors & Debugging
+
+**26. How can you log a message to the console?**
+You can log a message to the console using `console.log`.
+
+*Example:*
+```javascript
+console.log("This is a message");
+```
+
+**27. What is a JavaScript exception?**
+A JavaScript exception is an error that occurs during the execution of a script. It disrupts the normal flow of the program.
+
+*Example:*
+```javascript
+let x = y + 1; // y is not defined, so this will throw a ReferenceError
+```
+
+**28. How do you handle exceptions in JavaScript?**
+You handle exceptions using `try...catch` blocks.
+
+*Example:*
+```javascript
+try {
+    let x = y + 1;
+} catch (error) {
+    console.log("An error occurred: " + error.message);
+}
+```
+
+### Miscellaneous
+
+**29. What is "hoisting" in JavaScript?**
+Hoisting is JavaScript's behavior of moving declarations to the top of the current scope during the compilation phase.
+
+*Example:*
+```javascript
+console.log(x); // undefined due to hoisting
+var x = 5;
+```
+
+**30. What does the `this` keyword refer to in JavaScript?**
+The `this` keyword refers to the object that is currently executing the code. Its value depends on the context in which it is used.
+
+*Example:*
+```javascript
+let person = {
+    name: "John",
+    greet: function() {
+        console.log("Hello, " + this.name);
+    }
+};
+
+person.greet(); // "Hello, John"
+```
